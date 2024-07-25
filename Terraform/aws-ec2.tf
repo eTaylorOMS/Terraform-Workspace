@@ -3,7 +3,7 @@ module "ec2_instance" {
 
   name = "tf-test"
 
-  instance_type          = "t4g.micro"
+  instance_type          = "t3.micro"
   key_name               = module.key_pair.key_pair_name
   monitoring             = true
   vpc_security_group_ids = [module.ssh_security_group.security_group_id]
