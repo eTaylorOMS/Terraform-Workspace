@@ -3,7 +3,7 @@ module "ec2_instance" {
 
   name = "tf-test"
 
-  instance_type          = "t2.micro"
+  instance_type          = "t4g.micro"
   key_name               = module.key_pair.key_pair_name
   monitoring             = true
   vpc_security_group_ids = [module.ssh_security_group.security_group_id]
@@ -13,4 +13,5 @@ module "ec2_instance" {
 #This is for EC2 Instance connect on public subnets
 resource "aws_ec2_instance_connect_endpoint" "tf_test_connect" {
   subnet_id = module.vpc.public_subnets[0]
+  security_group_ids = module.ssh_security_group.security_group_id
 }
