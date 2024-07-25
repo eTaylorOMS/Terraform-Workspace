@@ -13,5 +13,5 @@ module "ec2_instance" {
 #This is for EC2 Instance connect on public subnets
 resource "aws_ec2_instance_connect_endpoint" "tf_test_connect" {
   subnet_id = module.vpc.public_subnets[0]
-  security_group_ids = module.ssh_security_group.security_group_id
+  security_group_ids = module.internet_ssh_security_group.security_group_id
 }
