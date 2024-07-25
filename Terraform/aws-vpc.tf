@@ -1,6 +1,6 @@
 module "vpc" {
   source                   = "terraform-aws-modules/vpc/aws"
-  version                  = "2.55.0"
+  version                  = "5.9.0"
   name                     = "eve-vpc"
   cidr                     = "10.0.1.0/24"
   azs                      = ["us-east-1a", "us-east-1b"]
