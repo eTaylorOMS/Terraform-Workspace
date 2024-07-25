@@ -3,6 +3,7 @@ module "ssh_security_group" {
   version = "~> 5.0"
   name    = "internal-ssh"
   vpc_id  = module.vpc.vpc_id
+  ingress_cidr_blocks = ["0.0.0.0/0"]
 }
 
 module "internet_ssh_security_group" {
