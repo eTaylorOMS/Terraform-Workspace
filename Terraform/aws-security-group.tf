@@ -1,9 +1,6 @@
-module "web_server_sg" {
-  source = "terraform-aws-modules/security-group/aws//modules/http-80"
-
-  name        = "tf-test-sg"
-  description = "Security group for web-server with HTTP ports open within VPC"
-  vpc_id      = module.vpc.vpc_id
-
-  ingress_cidr_blocks = ["10.10.0.0/16"]
+module "ssh_security_group" {
+  source  = "terraform-aws-modules/security-group/aws//modules/ssh"
+  version = "~> 5.0"
+  name = "tf-test"
+  vpc_id = module.vpc.vpc_id
 }
